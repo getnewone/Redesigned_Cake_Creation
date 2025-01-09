@@ -1,0 +1,200 @@
+body {
+    background-color: #FFF0F5; 
+    font-family: 'Arial', sans-serif; 
+    color: #333; 
+}
+
+.container {
+    margin: 100px auto;
+    width: 50%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    color: #6a1b9a;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #FF69B4, #FFC0CB); /* Pink gradient for the underline */
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #6a1b9a;
+    font-weight: 600;
+    font-size: 0.95em;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 90%;
+    padding: 15px;
+    border: 2px solid #FFC0CB; 
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.9);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #FF69B4; 
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 105, 180, 0.2);
+    transform: translateY(-2px);
+}
+
+
+
+.product-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.product-option {
+    flex: 1 1 auto;
+    min-width: 100px;
+    position: relative;
+    padding: 10px;
+    border: 2px solid #FFC0CB; /* Light pink border */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.product-option:hover,
+.product-option.selected {
+    border-color: #FF69B4; /* Darker pink on hover */
+    transform: translateY(-2px);
+    background: rgba(255,105,180,0.1);
+}
+
+.product-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.product-option label {
+    display: block;
+    margin: 0;
+    color: #6a1b9a;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.product-option input[type="radio"]:checked + label {
+   
+    border-color: #FF69B4;
+    
+}
+
+@media (max-width: 768px) {
+    .product-options {
+        flex-direction: column;
+    }
+
+    .product-option {
+        width: 100%;
+    }
+}
+
+.file-upload {
+    border: 2px dashed #FFC0CB; /* Light pink dashed border */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.6);
+}
+
+.file-upload:hover {
+    border-color: #FF69B4; /* Darker pink on hover */
+    background: rgba(255,105,180,0.1);
+    transform: translateY(-2px);
+}
+
+.Enquiry_submit {
+    background: linear-gradient(45deg, #FF69B4, #FFC0CB); /* Pink gradient for button */
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 40px auto 0;
+    box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+}
+
+.Enquiry_submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,105,180,0.4);
+}
+
+.required::after {
+    content: "*";
+    color: #FF69B4; /* Pink color for required asterisk */
+    margin-left: 4px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8E4585; /* Purple on hover */
+}
+
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+}

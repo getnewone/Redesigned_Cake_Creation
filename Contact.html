@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CCBK</title>
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="Nav-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="mobile-menu">
+        <div class="mobile-menu-content"></div>
+    </div>
+    
+    <div class="container">
+        <h1>Contact Us</h1>
+        
+        <div class="contact-grid">
+          <div class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>For order changes and general enquiries:</p>
+            <p>Email: <a class="link" href="mailto:sales@ccbk.com.au">sales@ccbk.com.au</a></p>
+            <div class="social-links">
+              <a class="link" href="https://facebook.com/ccbk">Facebook Message</a>
+              <a class="link" href="https://wa.me/61393959656">WhatsApp Message</a>
+            </div>
+            <p>For custom order quotes, please <a class="link" href="https://ccbk.com.au/quote-form">complete the form here</a></p>
+          </div>
+      
+          <div class="contact-section">
+            <h2>Visit Our Store</h2>
+            <p><strong>Located in:</strong><br>
+            Stockland Point Cook Shopping Centre<br>
+            In the Coles Quadrant!</p>
+            <p>Phone: <a class="link" href="tel:0393959656">(03) 9395 9656</a></p>
+            <p><strong>Address:</strong><br>
+            Shop 111, Cnr Main & Murnong Streets<br>
+            Point Cook VIC 3030</p>
+            <p><a class="link" href="https://ccbk.com.au/consult">Book a face to face cake consult</a></p>
+          </div>
+      
+          <div class="contact-section">
+            <div class="opening-hours">
+              <h2>Opening Hours</h2>
+              <div class="hours-grid">
+              </div>
+            </div>
+          </div>
+      
+          <div class="contact-section">
+            <div class="holiday-hours">
+              <h2>Public Holidays 2024</h2>
+              <p><strong>Open Days:</strong></p>
+              <div class="holiday-grid">
+              </div>
+              <p style="margin-top: 1rem; color: var(--primary);"><strong>Note:</strong> We are closed for all other public holidays in 2024.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="contact-section">
+          <h2>Pop-Up Store</h2>
+          <div class="popup-notice">
+            <h3>Armstrong Creek HomeCo.</h3>
+            <p>Available until December 24th 2024</p>
+            <p>Self serve with our vending machine anytime the shopping centre is open, 7 days a week</p>
+            <p>Our friendly team will be on-site Thursday, Friday and Saturdays from 9:30am until 4pm</p>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const hoursGrid = document.querySelector('.hours-grid');
+        const hours = {
+          'Monday': 'CLOSED',
+          'Tuesday': '9am - 5:30pm',
+          'Thursday': '9am - 5:30pm',
+          'Friday': '9am - 5:30pm',
+          'Saturday': '9am - 5pm',
+          'Sunday': '9am - 5pm'
+        };
+      
+        for (const [day, time] of Object.entries(hours)) {
+          hoursGrid.innerHTML += `
+            <div class="day">${day}</div>
+            <div class="time">${time}</div>
+          `;
+        }
+      
+        const holidayGrid = document.querySelector('.holiday-grid');
+        const openHolidays = {
+          'Easter Saturday - Sat 30 March': '9am - 5pm',
+          'Easter Sunday - Sun 31 March': '9am - 1pm',
+          'Friday before Grand Final - Fri 27 Sep': '10am-5pm'
+        };
+      
+        for (const [holiday, status] of Object.entries(openHolidays)) {
+          holidayGrid.innerHTML += `
+            <div class="holiday">${holiday}</div>
+            <div class="status">${status}</div>
+          `;
+        }
+      });
+      </script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      
+      <script src="Intro.js"></script>
+      <script src="Nav-footer.js"></script>
+      <script src="cart.js"></script>
+      <script src="cart-counter.js"></script>
+</body>
+</html>

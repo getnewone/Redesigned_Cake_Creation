@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Cake Details - Cake Creations by Kate</title>
+    <link rel="stylesheet" href="Nav-footer.css">
+    <link rel="stylesheet" href="Products_template.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+
+    <div class="product-container">
+        <div class="product-image">
+            <img src="" alt="Macarons" id="main-image">
+            <div class="zoom-instruction"></div>
+        </div>
+        
+        <div class="product-details">
+            <h1 class="product-title" id="product-title"></h1>
+            
+            <div class="rating" id="product-rating">
+                <span class="stars" id="star-rating"></span>
+                <span class="review-count" id="review-count"></span>
+            </div>
+
+            <div class="price" id="product-price"></div>
+
+            <div class="description" id="product-description"> </div>
+
+            <form class="customization-form" >
+                <!-- Customization options will be dynamically inserted here -->
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Our Favourites Section -->
+    <section class="favourites-section">
+        <h2>OUR FAVOURITES</h2>
+        <div class="favourites-grid">
+    </section>
+
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+        <div class="reviews-header">
+            <h2>Reviews <span class="review-count">29</span></h2>
+            <div class="overall-rating">
+                <div class="rating-number">4.9</div>
+                <div class="rating-stars">
+                    ★★★★★
+                    <span class="review-count">Based on 29 Reviews</span>
+                </div>
+            </div>
+            <button class="write-review-btn" onclick="openReviewModal()">Write a Review</button>
+        </div>
+
+        <div class="rating-distribution">
+            <div class="rating-bar">
+                <span class="stars">★★★★★</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 90%"></div>
+                </div>
+                <span class="count">(26)</span>
+            </div>
+            <div class="rating-bar">
+                <span class="stars">★★★★☆</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 7%"></div>
+                </div>
+                <span class="count">(2)</span>
+            </div>
+            <div class="rating-bar">
+                <span class="stars">★★★☆☆</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 3%"></div>
+                </div>
+                <span class="count">(1)</span>
+            </div>
+            <div class="rating-bar">
+                <span class="stars">★★☆☆☆</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 0%"></div>
+                </div>
+                <span class="count">(0)</span>
+            </div>
+            <div class="rating-bar">
+                <span class="stars">★☆☆☆☆</span>
+                <div class="bar-container">
+                    <div class="bar" style="width: 0%"></div>
+                </div>
+                <span class="count">(0)</span>
+            </div>
+        </div>
+
+        <div class="reviews-filter">
+            <select id="review-sort">
+                <option value="recent">Most Recent</option>
+                <option value="highest">Highest Rated</option>
+                <option value="lowest">Lowest Rated</option>
+            </select>
+        </div>
+
+        <div class="reviews-scroll-container">
+            <div class="reviews-list">
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer-name">Kruti C.</span>
+                        <span class="verified-badge">Verified Buyer</span>
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">22 July 2024</span>
+                    </div>
+                    <p class="review-text">It was my first time for cake as we love cupcakes made by them. But cake was really good and very tasty. Definitely come back again for cake. Amazing design and nice flavour. Very happy.</p>
+                    <div class="review-footer">
+                        <span class="review-helpful">Was this helpful?</span>
+                        <button class="helpful-btn">Yes (0)</button>
+                        <button class="helpful-btn">No (0)</button>
+                    </div>
+                </div>
+                <!-- Add more review items here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeReviewModal()">&times;</span>
+            <h2>Write a Review</h2>
+            <form class="review-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="john.smith@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">★</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review-title">Title of Review</label>
+                    <input type="text" id="review-title" placeholder="Give your review a title" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">How was your overall experience?</label>
+                    <textarea id="review-text" rows="6"></textarea>
+                </div>
+                <button type="submit" class="submit-review">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="thankYouMessage" class="thank-you-message">
+        <div class="thank-you-content">
+            <i class="fa fa-check-circle"></i>
+            <h2>Thank You!</h2>
+            <p>Your review has been submitted successfully.</p>
+        </div>
+    </div>
+
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script src="Nav-footer.js"></script>
+    <script src="Review.js"></script>
+    <script src="Macarons_products.js"></script>
+    <script src="cart-counter.js"></script>
+    <script src="cart.js"></script> 
+</body>
+</html>

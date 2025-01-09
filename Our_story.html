@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Our_story.css">
+    <link rel="stylesheet" href="Nav-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Our Story | CCBK</title>
+</head>
+<body>
+    <div class="container">
+        <div class="story-header">
+          <h1>Our Story</h1>
+          <svg class="decorative-svg" viewBox="0 0 100 100">
+            <path d="M50 0 C22.4 0 0 22.4 0 50 C0 77.6 22.4 100 50 100 C77.6 100 100 77.6 100 50 C100 22.4 77.6 0 50 0" fill="var(--primary)" />
+          </svg>
+        </div>
+      
+        <div class="story-content">
+          <div class="story-section">
+            <div class="story-text">
+              <p>For many years, I baked as a hobby. My love for baking and all things creative was inspired by my <span class="highlight">Grandma Joan</span>. She taught me all things baking and how to make the best birthday cakes! Grandma Joan was very nifty in the kitchen; she had a desire of creating all things sweet and embraced the handcrafted method of baking. I learnt her secret sponge cake recipe, along with other secrets which have inspired my wonderful cheesecake cups.</p>
+            </div>
+            <div class="story-image">
+              <img alt="vintage style photograph of grandmother and granddaughter baking together in a warm, rustic kitchen" src="https://scontent.fmel10-1.fna.fbcdn.net/v/t39.30808-6/465220723_964565222364497_6901585079876256880_n.jpg?stp=dst-jpg_p960x960&_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=cplBqNAVk8AQ7kNvgHkqXyu&_nc_zt=23&_nc_ht=scontent.fmel10-1.fna&_nc_gid=ADAx5TSACoK8WaRAWj9IDZi&oh=00_AYDR_d9PhZdVL_cGJMu6hIQOAAXeYiYoj6SVwqiiTBefvA&oe=6737BD7B" width="600" height="400">
+            </div>
+          </div>
+      
+          <div class="story-section">
+            <div class="story-text">
+              <p><span class="highlight">CAKE CREATIONS by Kate™</span> began as a home-based passion. After baking cakes and cupcakes at home for many years, in 2017, I decided to build my flagship store at Stockland's Point Cook Town Centre, Victoria. This was an amazing opportunity for me to respectfully showcase all those amazing desserts that my Grandma Joan had inspired me to create.</p>
+            </div>
+            <svg class="decorative-svg" viewBox="0 0 100 100">
+                <path d="M50 0 C22.4 0 0 22.4 0 50 C0 77.6 22.4 100 50 100 C77.6 100 100 77.6 100 50 C100 22.4 77.6 0 50 0" fill="var(--primary)" />
+              </svg>
+            <div class="story-image">
+              <img alt="modern storefront of Cake Creations by Kate at Point Cook Town Centre with elegant window display" src="Images/Other_content/http---prod.static9.net.au-_-media-2018-09-18-14-29-1809_CUPCAKE3.jpg" width="600" height="400">
+            </div>
+          </div>
+      
+          <div class="story-section">
+            <div class="story-text">
+              <p>I am very thankful to our loyal customers, who provide support, guidance and the opportunity for my dessert business to continually grow and open new pop-up locations in Melbourne. Our pop-up stores are uniquely Melbourne and we sell fabulous mini cupcakes in a variety of flavours.</p>
+            </div>
+            <svg class="decorative-svg" viewBox="0 0 100 100">
+                <path d="M50 0 C22.4 0 0 22.4 0 50 C0 77.6 22.4 100 50 100 C77.6 100 100 77.6 100 50 C100 22.4 77.6 0 50 0" fill="var(--primary)" />
+              </svg>
+            <div class="story-image">
+              <img alt="colorful array of artisanal cupcakes displayed in a modern pop-up store setting" src="https://cakecreationsbykate.com.au/cdn/shop/products/mixed-box-of-mini-cupcakes-box-of-12-none-cake-creations-by-kate-mini-cupcakes-6294493200497.jpg?v=1629267722" width="600" height="400">
+            </div>
+          </div>
+        </div>
+      
+        <!-- <div class="partners">
+          <h2>Our Corporate Partners</h2>
+          <div class="partners-grid">
+            <div class="partner-logo">
+              <img alt="Bank of Melbourne logo in corporate blue" src="bom-logo.jpg" width="150" height="80">
+            </div>
+            <div class="partner-logo">
+              <img alt="Crown Casino logo in gold and black" src="crown-logo.jpg" width="150" height="80">
+            </div>
+            <div class="partner-logo">
+              <img alt="Myer logo in black" src="myer-logo.jpg" width="150" height="80">
+            </div>
+            <div class="partner-logo">
+              <img alt="NAB logo in red and white" src="nab-logo.jpg" width="150" height="80">
+            </div>
+            <div class="partner-logo">
+              <img alt="Optus logo in teal" src="optus-logo.jpg" width="150" height="80">
+            </div>
+            <div class="partner-logo">
+              <img alt="Telstra logo in purple" src="telstra-logo.jpg" width="150" height="80">
+            </div>
+          </div> -->
+        </div>
+      </div>
+      
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+          img.addEventListener('error', function() {
+            this.style.display = 'none';
+          });
+        });
+      
+        const sections = document.querySelectorAll('.story-section');
+        const observerOptions = {
+          threshold: 0.2,
+          rootMargin: '0px'
+        };
+      
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+            }
+          });
+        }, observerOptions);
+      
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      });
+      </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+
+
+    <script src="Intro.js"></script>
+    <script src="Nav-footer.js"></script>
+    <script src="cart.js"></script>
+    <script src="cart-counter.js"></script>
+    <script src="Cake_products.js"></script>
+    
+</body>
+</html>

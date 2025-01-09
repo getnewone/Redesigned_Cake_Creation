@@ -1,0 +1,1006 @@
+body {
+    background-color: pink;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+    display: flex;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product-image {
+    flex: 1;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+
+.product-details {
+    flex: 1;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stars {
+    color: gold;
+}
+
+.review-count {
+    color: #666;
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(13, 12, 12);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.description .note {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: #666;
+    margin-top: 15px;
+}
+
+ 
+
+.customization-form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.form-group {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group select,
+.form-group input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Flavor Selector Styles */
+.flavor-selector {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.flavor-selector__title {
+    color: #6a1b9a;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.flavor-selector__radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flavor-selector__radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.flavor-selector__radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.flavor-selector__or {
+    color: #718096;
+    font-weight: 500;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.flavor-selector__custom-options {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+}
+
+.flavor-selector__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.flavor-selector__header h3 {
+    color: #6a1b9a;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.flavor-selector__counter {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.flavor-selector__alert {
+    background-color: #fed7d7;
+    border: 1px solid #feb2b2;
+    color: #9b2c2c;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.flavor-selector__options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.flavor-option {
+    background-color: #f7fafc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.flavor-option:hover {
+    background-color: #edf2f7;
+}
+
+.flavor-option label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.flavor-option input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.flavor-option__tag {
+    background-color: #6a1b9a;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+    margin-left: 0.5rem;
+}
+
+.flavor-option input[type="checkbox"]:disabled + label {
+    color: #a0aec0;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .flavor-selector__options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.quantity-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.quantity-input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.add-to-cart {
+    flex: 1;
+    padding: 15px 30px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #4a148c;
+}
+
+/* Image zoom effect */
+.product-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        margin: 20px;
+
+    }
+
+    .product-image {
+        width: 100%;
+        margin-top: 80px;
+        
+    }
+    .product-details {
+        width: 100%;
+        
+        
+    }
+}
+/* Our Favourites Section */
+.favourites-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 60px 20px;
+    background-color: #fff5f8;
+}
+
+.favourites-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.favourites-grid {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.favourite-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.favourite-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cake-info, .cupcake-info, .Macarons-info, .Cookies-info {
+    position: absolute;
+    bottom: 0;
+    left: -12px;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(237, 127, 164);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.cake-info h3, .cupcake-info h3, .Macarons-info h3, .Cookies-info h3 {
+    margin: 0px;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(99, 2, 99);
+}
+
+.cake-info p, .cupcake-info p, .Macarons-info p, .Cookies-info p {
+    margin: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+}
+
+.favourite-item:hover img {
+    transform: translateY(-60px);
+}
+
+.favourite-item:hover .cake-info {
+    transform: translateY(0);
+}
+.favourite-item:hover .cupcake-info {
+    transform: translateY(0);
+}
+.favourite-item:hover .Macarons-info {
+    transform: translateY(0);
+}
+.favourite-item:hover .Cookies-info {
+    transform: translateY(0);
+}
+
+.cake-link, .cupcake-link, .Macarons-link, .Cookies-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .favourites-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .favourites-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-title {
+        font-size: 1.23rem;
+        margin-top: -10px;
+    }
+
+    .price {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        padding-right: 10px;
+    }
+
+    .form-group label {
+        font-size: 15px;
+    }
+
+    .form-group select,
+    .form-group input {
+        width: 90%;
+    }
+
+    .add-to-cart {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .quantity-container {
+        font-size: 0.8rem;
+       
+    }
+
+    .quantity-input {
+        font-size: 0.8rem;
+        width: 50px;
+    }
+
+    .favourites-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .reviews-section {
+        padding: 30px 15px;
+    }
+    
+    .reviews-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .overall-rating {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .rating-number {
+        font-size: 1.5rem;
+    }
+    
+    .rating-stars {
+        font-size: 1rem;
+    }
+    
+    .write-review-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .reviews-scroll-container {
+        margin: 0 -15px;
+        padding: 0 15px;
+    }
+    
+    .reviews-list {
+        gap: 15px;
+    }
+    
+    .review-item {
+        flex: 0 0 180px;  /* Reduced from 280px */
+        padding: 12px;    /* Reduced from 15px */
+        font-size: 0.8rem;
+    }
+    
+    .review-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+
+    
+
+}
+
+.price {
+    color: #666;
+    font-weight: 500;
+}
+
+/* Reviews Section */
+.reviews-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.review-count {
+    background-color: #f0f0f0;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    margin-left: 8px;
+}
+
+.overall-rating {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.rating-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.rating-stars {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.write-review-btn {
+    padding: 10px 20px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.write-review-btn:hover {
+    background-color: #4a148c;
+}
+
+/* Rating Distribution */
+.rating-distribution {
+    margin: 30px 0;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.bar-container {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background-color: gold;
+}
+
+/* Review Items */
+.review-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+.reviews-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 20px; /* Add some padding to show scrollbar */
+}
+
+.reviews-list {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.review-item {
+    flex: 0 0 400px; /* Fixed width for each review item */
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the scrollbar */
+.reviews-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reviews-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.reviews-scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.reviews-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.verified-badge {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+.review-stars {
+    color: gold;
+}
+
+.review-date {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.review-text {
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.review-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.helpful-btn {
+    padding: 5px 15px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.helpful-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Review Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.review-form .form-group {
+    margin-bottom: 20px;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    color: #ddd;
+    font-size: 24px;
+}
+
+.star-rating input:checked ~ label {
+    color: gold;
+}
+
+.submit-review {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submit-review:hover {
+    background-color: #333;
+}
+
+
+.thank-you-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1001;
+}
+
+.thank-you-content {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.thank-you-message.show .thank-you-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.thank-you-message i {
+    font-size: 48px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.thank-you-message h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.thank-you-message p {
+    color: #666;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-wrapper .placeholder-label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.input-wrapper input:focus + .placeholder-label,
+.input-wrapper input:not(:placeholder-shown) + .placeholder-label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+    color: #333;
+}
+
+.input-wrapper input::placeholder {
+    color: transparent;
+}
+
+
+
+/* Add these styles to your existing CSS file */
+
+.filling-color-selector {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .filling-color-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .filling-color-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .filling-color-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .filling-color-option:hover {
+    background-color: #e9ecef;
+  }
+  
+  .filling-color-option input[type="radio"] {
+    display: none;
+  }
+  
+  .filling-color-checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ced4da;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .filling-color-option input[type="radio"]:checked + .filling-color-checkmark::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+  
+  .filling-color-label {
+    font-size: 1rem;
+    color: #495057;
+  }
+  
+  .filling-color-price {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-left: 0.5rem;
+  }
+  
+  .filling-color-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d;
+    padding: 0.5rem;
+    background-color: #e9ecef;
+    border-radius: 4px;
+  }
+
+  label {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-icon {
+    cursor: help;
+    font-size: 12px;
+    position: relative;
+}
+
+.tooltip-icon::after {
+    content: attr(title);
+    display: none;
+    position: absolute;
+    top: calc(0% + -25px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.tooltip-icon:hover::after {
+    display: block;
+    opacity: 1;
+}
+
+
+/* Styles for color-swatch container */
+.color-swatch-container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.subtitle {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.color-swatch {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.color-swatch:hover {
+    box-shadow: 0 0 3px #000;
+}
+
+.color-swatch.selected {
+    border: 2px solid black;
+}
+
+.color-swatch::after {
+    content: attr(data-color);
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.color-swatch:hover::after {
+    display: block;
+}

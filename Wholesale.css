@@ -1,0 +1,142 @@
+:root {
+    --primary: #6a1b9a;
+    --primary-light: #ffcdd2;
+    --dark: #4a4a4a;
+    --light: #ffe4e6;
+    --text-secondary: #d81b60;
+  }
+  
+  
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 3rem 2rem;
+  }
+  
+  .wholesale-header {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .wholesale-header h1 {
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease;
+  }
+  
+  .wholesale-header p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: var(--dark);
+  }
+  
+  .form-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(106,27,154,0.1);
+    animation: slideUp 0.8s ease;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95em;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #FFC0CB;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.9);
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #FF69B4;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 105, 180, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .required::after {
+    content: '*';
+    color: #FF69B4;
+    margin-left: 4px;
+  }
+  
+  .W-button {
+    background: linear-gradient(45deg, #FF69B4, #FFC0CB);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 40px auto 0;
+    box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+    width: auto;
+  }
+  
+  .W-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255,105,180,0.4);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+
+    
+    .container {
+      width: 90%;
+      padding: 20px;
+    }
+    
+    .form-container {
+      padding: 2rem 2.7rem;
+    }
+    
+    .wholesale-header h1 {
+      font-size: 2rem;
+      margin-top: 5rem;
+    }
+  }
+

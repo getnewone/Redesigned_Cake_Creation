@@ -1,0 +1,238 @@
+body {
+    background-color: pink; /* Light pink background */
+    
+}
+
+.corp-page {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.corp-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.corp-hero-content {
+    flex: 1;
+    max-width: 60%;
+    
+}
+
+.corp-title {
+    color: #6a1b9a;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.corp-subtitle {
+    color: #6a1b9a;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.corp-intro p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.corp-hero-image {
+    flex: 1;
+    max-width: 40%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.corp-hero-image img {
+    max-width: 100%;
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 1024px) {
+    .corp-hero {
+        flex-direction: column;
+    }
+
+    .corp-hero-content,
+    .corp-hero-image {
+        max-width: 100%;
+    }
+
+    .corp-hero-image {
+        margin-top: 30px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .corp-title {
+        font-size: 2.5rem;
+    }
+
+    .corp-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+.corp-products {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    gap: 30px;
+}
+
+.corp-product-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.corp-product-icon {
+    font-size: 2.5rem;
+    color: palevioletred;
+    margin-bottom: 20px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.corp-product-card h2 {
+    color: #6a1b9a;
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+.corp-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #6a1b9a;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.corp-btn:hover {
+    background-color: #771daf;
+}
+
+.corp-product-details {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.corp-product-details h2 {
+    color: #6a1b9a;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.corp-product-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+#corp-cupcakes-section .corp-product-content {
+    flex-direction: row-reverse;
+}
+
+.corp-product-content img {
+    width: 45%;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.corp-product-info {
+    line-height: 2;
+    flex: 1;
+}
+
+.corp-product-info p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.corp-product-info .corp-btn {
+    margin-top: 30px;
+}
+
+/* CTA Section at bottom */
+.corp-cta {
+    background-color: #6a1b9a;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 20px;
+    margin-top: 80px;
+}
+
+.corp-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.corp-cta p {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.corp-cta .corp-btn {
+    background-color: white;
+    color: #6a1b9a;
+}
+
+.corp-cta .corp-btn:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .corp-hero {
+        text-align: center;
+    }
+
+    .corp-title {
+        font-size: 2.5rem;
+    }
+
+    .corp-products {
+        flex-direction: column;
+    }
+
+    .corp-product-content {
+        flex-direction: column !important;
+    }
+
+    .corp-product-content img {
+        width: 100%;
+    }
+
+    .corp-product-details {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Order Enquiry Form</title>
+    <link rel="stylesheet" href="Custome_enquiry.css">
+    <link rel="stylesheet" href="Nav-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .invalid {
+        border-color: #dc3545;
+        background-color: #fff8f8;
+    }
+    .invalid:focus {
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Custom Order Enquiry Form</h1>
+        <form id="customInquiryForm" onsubmit="return validateForm(event)">
+            <div class="form-group">
+                <label class="required" for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label class="required" for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label class="required" for="phone">Your Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Product</label>
+                <div class="product-options">
+                    <div class="product-option">
+                        <input type="radio" id="cake" name="product" value="cake" required>
+                        <label for="cake">CAKE</label>
+                    </div>
+                    <div class="product-option">
+                        <input type="radio" id="cupcakes" name="product" value="cupcakes">
+                        <label for="cupcakes">CUPCAKES</label>
+                    </div>
+                    <div class="product-option">
+                        <input type="radio" id="macarons" name="product" value="macarons">
+                        <label for="macarons">MACARONS</label>
+                    </div>
+                    <div class="product-option">
+                        <input type="radio" id="biscuits" name="product" value="biscuits">
+                        <label for="biscuits">BISCUITS</label>
+                    </div>
+                    <div class="product-option">
+                        <input type="radio" id="other" name="product" value="other">
+                        <label for="other">OTHER</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="budget">Working Budget $</label>
+                <input type="number" id="budget" name="budget" min="0" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Pickup or Delivery?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="pickup" name="delivery" value="pickup" required>
+                        <label for="pickup">Pickup</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="delivery" name="delivery" value="delivery">
+                        <label for="delivery">Delivery</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="event-date">Event Date</label>
+                <input type="date" id="event-date" name="event-date" required>
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="cake-size">Preferred Cake Size</label>
+                <select id="cake-size" name="cake-size" required onchange="toggleServingsField()">
+                    <option value="">Select cake size</option>
+                    <option value="standard">Standard (6-8 servings)</option>
+                    <option value="6-inch">6 inch (8-10 servings)</option>
+                    <option value="8-inch">8 inch (12-15 servings)</option>
+                    <option value="10-inch">10 inch (20-25 servings)</option>
+                    <option value="tiered">Tiered Cake/More servings</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="servings-group" style="display: none;">
+                <label class="required" for="servings">Number of Servings Needed</label>
+                <input type="number" id="servings" name="servings" min="30" placeholder="Enter number of servings">
+                <small>For tiered cakes or larger parties (30+ servings)</small>
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="cake-flavor">Preferred Cake Flavor</label>
+                <select id="cake-flavor" name="cake-flavor" required>
+                    <option value="">Select a flavor</option>
+                    <option value="vanilla">Vanilla</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="red-velvet">Red Velvet</option>
+                    <option value="carrot">Carrot</option>
+                    <option value="other">Other (specify in details)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="filling">Preferred Filling</label>
+                <select id="filling" name="filling" required>
+                    <option value="">Select a filling</option>
+                    <option value="vanilla-buttercream">Vanilla Buttercream</option>
+                    <option value="chocolate-ganache">Chocolate Ganache</option>
+                    <option value="fruit">Fresh Fruit</option>
+                    <option value="cream-cheese">Cream Cheese</option>
+                    <option value="other">Other (specify in details)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Dietary Requirements</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="gluten-free" name="not-dietary" value="not-gluten-free">
+                    <label for="gluten-free">Standard</label>
+
+                    <input type="checkbox" id="gluten-free" name="dietary" value="gluten-free">
+                    <label for="gluten-free">Gluten Free</label>
+                    
+                    <input type="checkbox" id="dairy-free" name="dietary" value="dairy-free">
+                    <label for="dairy-free">Dairy Free</label>
+                    
+                    <input type="checkbox" id="nut-free" name="dietary" value="nut-free">
+                    <label for="nut-free">Nut Free</label>
+                    
+                    <input type="checkbox" id="vegan" name="dietary" value="vegan">
+                    <label for="vegan">Vegan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="required" for="occasion">Event/Occasion</label>
+                <select id="occasion" name="occasion" required>
+                    <option value="">Select occasion</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="anniversary">Anniversary</option>
+                    <option value="graduation">Graduation</option>
+                    <option value="other">Other (specify in details)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="color-scheme">Preferred Color Scheme</label>
+                <input type="text" id="color-scheme" name="color-scheme" placeholder="e.g., Pink and Gold, Navy and Silver">
+            </div>
+
+            <div class="form-group">
+                <label for="theme">Cake Theme/Style</label>
+                <input type="text" id="theme" name="theme" placeholder="e.g., Floral, Modern, Rustic, Character-based">
+            </div>
+
+            <div class="form-group">
+                <label for="special-elements">Special Elements</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="topper" name="elements" value="topper">
+                    <label for="topper">Cake Topper</label>
+                    
+                    <input type="checkbox" id="fresh-flowers" name="elements" value="fresh-flowers">
+                    <label for="fresh-flowers">Fresh Flowers</label>
+                    
+                    <input type="checkbox" id="sugar-flowers" name="elements" value="sugar-flowers">
+                    <label for="sugar-flowers">Sugar Flowers</label>
+                    
+                    <input type="checkbox" id="edible-print" name="elements" value="edible-print">
+                    <label for="edible-print">Edible Image/Print</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Cake Message</label>
+                <input type="text" id="message" name="message" placeholder="Text to be written on the cake">
+            </div>
+
+            <div class="form-group">
+                <label for="images">Design Inspiration Images</label>
+                <div class="file-upload">
+                    <input type="file" id="images" name="images" accept="image/*" multiple>
+                    <p>Drag and drop images here or click to upload</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Other order details</label>
+                <textarea id="details" name="details" rows="5" placeholder="e.g. design details, gluten-free or vegan options, etc"></textarea>
+            </div>
+
+            <button class="Enquiry_submit" type="submit">Submit Order Enquiry</button>
+        </form>
+    </div>
+
+    <script>
+    function validateForm(event) {
+        event.preventDefault();
+        
+        const form = document.getElementById('customInquiryForm');
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const budget = document.getElementById('budget').value;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return false;
+        }
+
+        const phoneRegex = /^[\d\s\-\(\)]+$/;
+        if (!phoneRegex.test(phone)) {
+            alert('Please enter a valid phone number');
+            return false;
+        }
+
+        if (budget <= 0) {
+            alert('Please enter a valid budget amount');
+            return false;
+        }
+
+        alert('Order enquiry submitted successfully!\nWe will contact you soon.');
+        form.reset();
+        return false;
+    }
+
+    
+document.querySelectorAll('.product-option input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        // Remove 'selected' class from all options
+        document.querySelectorAll('.product-option').forEach(option => {
+            option.classList.remove('selected');
+        });
+        // Add 'selected' class to the selected option
+        if (radio.checked) {
+            radio.closest('.product-option').classList.add('selected');
+        }
+    });
+});
+
+
+    // Add animation to form fields when focused
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.style.transform = 'scale(1.01)';
+        });
+        input.addEventListener('blur', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    // File upload preview
+    const fileUpload = document.querySelector('.file-upload');
+    fileUpload.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        fileUpload.style.borderColor = '#ff6b6b';
+        fileUpload.style.background = 'rgba(255,154,158,0.1)';
+    });
+    fileUpload.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        fileUpload.style.borderColor = '#fad0c4';
+        fileUpload.style.background = 'rgba(255,255,255,0.6)';
+    });
+
+    // Add smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add ripple effect to buttons
+    const button = document.querySelector('button');
+    button.addEventListener('click', function(e) {
+        let ripple = document.createElement('div');
+        this.appendChild(ripple);
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        setTimeout(() => {
+            ripple.remove();
+        }, 1000);
+    });
+    </script>
+
+    <script>
+    function validateServings(input) {
+        if (document.getElementById('cake-size').value === 'tiered') {
+            const value = parseInt(input.value);
+            if (isNaN(value) || value < 30) {
+                alert('For tiered cakes, the number of servings should be more than 30, please use side arrow keys to adjust the value.');
+                input.value = '';
+                input.focus();
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function toggleServingsField() {
+        const cakeSize = document.getElementById('cake-size').value;
+        const servingsGroup = document.getElementById('servings-group');
+        const servingsInput = document.getElementById('servings');
+        
+        if (cakeSize === 'tiered') {
+            servingsGroup.style.display = 'block';
+            servingsInput.required = true;
+            // Clear any existing value when switching to tiered
+            servingsInput.value = '';
+            servingsInput.focus();
+        } else {
+            servingsGroup.style.display = 'none';
+            servingsInput.required = false;
+            servingsInput.value = '';
+        }
+    }
+
+    function normalizeText(text) {
+        return text.toLowerCase()
+            .replace(/[^a-z0-9]/g, '') // Remove special characters
+            .trim();
+    }
+
+    function findBestMatch(selectElement, value) {
+        if (!value) return null;
+        
+        const normalizedValue = normalizeText(value);
+        let bestMatch = null;
+        let bestScore = 0;
+
+        Array.from(selectElement.options).forEach(option => {
+            if (option.value === '') return; // Skip empty option
+            
+            const normalizedOption = normalizeText(option.text || option.value);
+            
+            // Exact match
+            if (normalizedValue === normalizedOption) {
+                bestMatch = option;
+                bestScore = 1;
+                return;
+            }
+
+            // Partial match
+            if (normalizedValue.includes(normalizedOption) || 
+                normalizedOption.includes(normalizedValue)) {
+                const score = Math.min(normalizedValue.length, normalizedOption.length) / 
+                             Math.max(normalizedValue.length, normalizedOption.length);
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMatch = option;
+                }
+            }
+        });
+
+        return bestScore > 0.5 ? bestMatch : null;
+    }
+
+    function setFormValue(elementId, value) {
+        if (!value) return;
+        
+        const element = document.getElementById(elementId);
+        if (!element) return;
+
+        if (element.type === 'checkbox') {
+            element.checked = true;
+        } else if (element.tagName === 'SELECT') {
+            const bestMatch = findBestMatch(element, value);
+            if (bestMatch) {
+                bestMatch.selected = true;
+            } else {
+                // If no good match found, try to select 'other'
+                const otherOption = Array.from(element.options)
+                    .find(opt => normalizeText(opt.value) === 'other');
+                if (otherOption) {
+                    otherOption.selected = true;
+                }
+            }
+        } else {
+            element.value = value;
+        }
+    }
+
+    function setCheckboxValues(name, values) {
+        if (!values) return;
+        
+        const checkboxes = document.querySelectorAll(`input[name="${name}"]`);
+        const valueArray = values.split(',')
+            .map(v => normalizeText(v))
+            .filter(v => v); // Remove empty values
+
+        checkboxes.forEach(checkbox => {
+            const normalizedValue = normalizeText(checkbox.value);
+            
+            // Check for exact or partial matches
+            const isMatch = valueArray.some(value => 
+                value === normalizedValue ||
+                value.includes(normalizedValue) ||
+                normalizedValue.includes(value)
+            );
+
+            checkbox.checked = isMatch;
+        });
+    }
+
+    // Auto-fill form when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        
+        // Handle cake size
+        const cakeSize = params.get('cake_size');
+        if (cakeSize) {
+            const size = cakeSize.toLowerCase();
+            const servings = params.get('servings');
+            
+            // Try to find exact match first
+            let sizeOption = Array.from(document.getElementById('cake-size').options)
+                .find(opt => opt.value.toLowerCase() === size);
+            
+            if (!sizeOption) {
+                // Try to match based on inch size
+                const inchMatch = size.match(/(\d+)-inch/);
+                if (inchMatch) {
+                    const inches = inchMatch[1];
+                    sizeOption = Array.from(document.getElementById('cake-size').options)
+                        .find(opt => opt.value.toLowerCase().includes(`${inches}-inch`));
+                }
+            }
+            
+            if (sizeOption) {
+                sizeOption.selected = true;
+                
+                // Handle tiered cake servings
+                if (size === 'tiered' && servings) {
+                    toggleServingsField();
+                    const servingsNum = parseInt(servings);
+                    if (servingsNum >= 30) {
+                        setFormValue('servings', servingsNum);
+                    }
+                }
+            }
+        }
+
+        // Handle dietary requirements
+        setCheckboxValues('dietary', params.get('dietary'));
+        setCheckboxValues('not-dietary', params.get('not_dietary'));
+
+        // Set other form values
+        setFormValue('cake-flavor', params.get('cake_flavor'));
+        setFormValue('filling', params.get('filling'));
+        setFormValue('occasion', params.get('occasion'));
+        setFormValue('color-scheme', params.get('color_scheme'));
+        setFormValue('theme', params.get('theme'));
+
+        // Handle checkboxes
+        setCheckboxValues('elements', params.get('special_elements'));
+    });
+
+    // Add input validation for servings
+    document.getElementById('servings').addEventListener('input', function() {
+        validateServings(this);
+    });
+
+    // Validate form before submission
+    document.getElementById('customInquiryForm').addEventListener('submit', function(event) {
+        const cakeSize = document.getElementById('cake-size').value;
+        const servingsInput = document.getElementById('servings');
+        
+        if (cakeSize === 'tiered') {
+            const servings = parseInt(servingsInput.value);
+            if (!servings || servings < 30) {
+                event.preventDefault();
+                alert('For tiered cakes, the number of servings should be more than 30');
+                servingsInput.value = '';
+                servingsInput.focus();
+                return false;
+            }
+        }
+    });
+    </script>
+
+    <script>
+    function validateEmail(email) {
+        // RFC 5322 compliant email regex
+        const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return emailRegex.test(email);
+    }
+
+    function validatePhone(phone) {
+        // Remove all non-numeric characters
+        const cleanPhone = phone.replace(/[^\d]/g, '');
+        
+        // Check for valid Australian phone numbers
+        // Mobile: 04XX XXX XXX or +614XX XXX XXX
+        // Landline: 02|03|07|08 XXXX XXXX
+        const mobileRegex = /^(?:(?:\+61|0)4\d{8})$/;
+        const landlineRegex = /^(?:(?:\+61|0)[2378]\d{8})$/;
+        
+        return mobileRegex.test(cleanPhone) || landlineRegex.test(cleanPhone);
+    }
+
+    function formatPhoneNumber(input) {
+        let value = input.value.replace(/[^\d]/g, '');
+        
+        if (value.length > 0) {
+            if (value.startsWith('61')) {
+                value = '0' + value.substring(2);
+            }
+            
+            if (value.length > 4) {
+                value = value.slice(0, 4) + ' ' + value.slice(4);
+            }
+            if (value.length > 8) {
+                value = value.slice(0, 8) + ' ' + value.slice(8);
+            }
+            
+            input.value = value.substring(0, 12);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const form = document.getElementById('customInquiryForm');
+
+        // Real-time email validation
+        emailInput.addEventListener('input', function() {
+            const email = this.value.trim();
+            if (email && !validateEmail(email)) {
+                this.setCustomValidity('Please enter a valid email address');
+                this.classList.add('invalid');
+            } else {
+                this.setCustomValidity('');
+                this.classList.remove('invalid');
+            }
+        });
+
+        // Real-time phone formatting and validation
+        phoneInput.addEventListener('input', function() {
+            formatPhoneNumber(this);
+            const phone = this.value.replace(/\s/g, '');
+            if (phone && !validatePhone(phone)) {
+                this.setCustomValidity('Please enter a valid Australian phone number');
+                this.classList.add('invalid');
+            } else {
+                this.setCustomValidity('');
+                this.classList.remove('invalid');
+            }
+        });
+
+        // Form submission validation
+        form.addEventListener('submit', function(event) {
+            const email = emailInput.value.trim();
+            const phone = phoneInput.value.replace(/\s/g, '');
+            let isValid = true;
+            let errorMessage = '';
+
+            // Validate email
+            if (!validateEmail(email)) {
+                errorMessage += 'Please enter a valid email address.\n';
+                emailInput.classList.add('invalid');
+                isValid = false;
+            }
+
+            // Validate phone
+            if (!validatePhone(phone)) {
+                errorMessage += 'Please enter a valid Australian phone number.\n';
+                phoneInput.classList.add('invalid');
+                isValid = false;
+            }
+
+            // Validate servings for tiered cakes
+            const cakeSize = document.getElementById('cake-size').value;
+            const servingsInput = document.getElementById('servings');
+            if (cakeSize === 'tiered') {
+                const servings = parseInt(servingsInput.value);
+                if (!servings || servings < 30) {
+                    errorMessage += 'For tiered cakes, the number of servings should be more than 30, please use side arrow keys to adjust the value.\n';
+                    servingsInput.classList.add('invalid');
+                    isValid = false;
+                }
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+                alert(errorMessage);
+                return false;
+            }
+        });
+    });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+
+
+    <script src="Intro.js"></script>
+    <script src="Nav-footer.js"></script>
+    <script src="cart.js"></script>
+    <script src="cart-counter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1478 @@
+/* Intro.css */
+
+#responsive-sections {
+    display: none;
+  }
+
+body, html {
+   background-color: pink;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    
+   
+}
+
+
+.animation {
+    height: 57vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    color: #6a1b9a;
+    font-weight: 100;
+    font-family: 'gilroy';
+    font-size: 4rem;
+    white-space: nowrap;
+    
+  
+}
+
+.animation h2 {
+
+display: inline-block;
+animation-name: anime;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-delay: 0.3s;
+
+
+
+}
+
+.animation h2 span {
+   color: transparent;
+   /* -webkit-text-stroke: 1.2px #6a1b9a; */
+   backface-visibility: hidden;
+}
+
+/* .animation h2 i:last-child {
+    
+    margin-right: 0.3em;  
+    
+}  */
+
+.animation h2 span:first-child {
+    color: #6a1b9a;
+   
+}
+
+.animation h2 i:first-of-type {
+    
+    color: #6a1b9a;
+}
+
+.animation h2 span:last-of-type {
+    color: transparent;
+    -webkit-text-stroke: 2px #6a1b9a;
+}
+
+.animation h2 i:last-child {
+    color: transparent;
+    -webkit-text-stroke: 2px #6a1b9a;
+    margin-right: 0.3em;  
+    
+} 
+
+.animation h2 i {
+    font-style: normal;  
+}
+
+
+
+.animation h2 span:last-of-type,
+.animation h2 i:last-child {
+    font-size: 5rem;  
+    font-style: italic;
+    
+}
+
+
+.main {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 60vh;
+    background-color: purple;
+    align-items: center;
+    overflow: hidden;
+     
+}
+
+.text_effect {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    font-size: 50px;
+    font-weight: 100;
+    width: 100%;
+    font-family: monospace;
+    opacity: .2;
+    white-space: nowrap;
+    color: pink;
+    
+}
+
+.text_effect_scroll {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    font-size: 50px;
+    font-weight: 100;
+    font-family: monospace;
+    width: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #ffc0cb;
+   
+    
+}
+
+.menu {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.menu h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.description {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: monospace;
+    line-height: 1.6;
+    font-size: 15px;
+    cursor: default; 
+}
+
+
+
+
+.menu_effect {
+    position: relative;
+    width: 50%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15%;
+    left: 2%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Large screens (1401px and above) */
+@media (min-width: 1401px) {
+    .menu_effect {
+        width: 50%;
+        margin-top: 12%;
+        left: 2%;
+    }
+}
+
+/* Medium-large laptops */
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .menu_effect {
+        width: 52%;
+        margin-top: 13%;
+        left: 3%;
+    }
+}
+
+/* Small laptops to large tablets */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .menu_effect {
+        width: 55%;
+        margin-top: 15%;
+        left: 4%;
+    }
+}
+
+/* Tablets and smaller laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .menu_effect {
+        width: 60%;
+        height: 65%;
+        margin-top: 18%;
+        left: 5%;
+    }
+}
+
+/* Additional breakpoint for smoother transition */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .menu_effect {
+        width: 58%;
+        margin-top: 16%;
+    }
+}
+
+/* Ensure smooth transitions */
+.menu_effect {
+    will-change: width, margin-top, left;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.image-container {
+    position: relative;
+    border-radius: 10px;
+    width: 75%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.menu-image {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.menu-image.default-image {
+    opacity: 1;
+}
+
+.menu-items {
+    width: 40%;
+    padding-left: 2rem;
+}
+
+.menu-items.visible {
+    opacity: 1;
+}
+
+.menu-items ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-items li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    font-weight: 100;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 3rem;
+    color: black;
+}
+
+.menu-items li:hover {
+    color: whitesmoke;
+    transform: translateX(10px);
+}
+
+.menu-text-container {
+    position: absolute;
+    top: 60%;
+    right: 10%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    
+}
+
+.menu-text-primary {
+    font-size: 50px;
+    width: 400px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(227, 79, 128);
+    text-align: left;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.menu-text-secondary {
+    font-size: 46px;
+    width: 400px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 174, 255);
+    font-style: italic;
+    transition: transform 0.3s ease-in;
+
+}
+
+.menu:hover .menu-text-primary {
+    transform: translateX(20%);
+    transition: transform 0.3s ease;
+    
+}
+.menu:hover .menu-text-secondary {
+    transform: translateX(-20%);
+    transition: transform 0.3s ease-in;
+    
+}
+
+
+
+@media (min-width: 769px) and (max-width: 1200px) {                                                                                           
+    .main {                                                                                                                                   
+        height: 50vh;                                                                                                                         
+    }                                                                                                                                         
+    .text_effect {                                                                                                                            
+        top: 5%;                                                                                                                              
+        left: 10%;                                                                                                                            
+        font-size: 40px;                                                                                                                      
+    }                                                                                                                                         
+    .text_effect_scroll {                                                                                                                     
+        top: 5%;                                                                                                                              
+        left: 10%;                                                                                                                            
+        font-size: 40px;                                                                                                                      
+    }                                                                                                                                         
+    .menu {                                                                                                                                   
+        height: 80vh;                                                                                                                         
+    }                                                                                                                                         
+    .menu h1 {                                                                                                                                
+        font-size: 40px;                                                                                                                      
+    }                                                                                                                                         
+    .description {                                                                                                                            
+        font-size: 14px;                                                                                                                      
+    }                                                                                                                                         
+    .menu_effect {                                                                                                                            
+        width: 50%;                                                                                                                           
+        height: 70%;                                                                                                                          
+        margin-top: 20%;                                                                                                                      
+        left: 5%;                                                                                                                             
+    }                                                                                                                                         
+    .image-container {                                                                                                                        
+        width: 100%;                                                                                                                           
+        height: 100%;                                                                                                                          
+    }                                                                                                                                         
+    .menu-items {                                                                                                                             
+        width: 35%;                                                                                                                           
+        padding-left: 1.5rem;                                                                                                                 
+    }                                                                                                                                         
+    .menu-items li {                                                                                                                          
+        font-size: 1.5rem;                                                                                                                    
+        margin-bottom: 3rem;                                                                                                                  
+    }                                                                                                                                         
+    .menu-text-container {                                                                                                                    
+        top: 70%;                                                                                                                             
+        right: 0%;                                                                                                                            
+    }                                                                                                                                         
+    .menu-text-primary {                                                                                                                      
+        font-size: 40px;                                                                                                                      
+    }                                                                                                                                         
+    .menu-text-secondary {                                                                                                                    
+        font-size: 36px;                                                                                                                      
+    }
+    
+    
+}                           
+
+
+
+
+/* Responsive styles for specified classes */
+@media (max-width: 769px) {
+    
+   
+  
+    .Ingredients {
+        display: none;
+    }
+
+    .menu-text-container {
+        margin-right: 40px;
+        margin-top: 100px;
+    }
+    .menu-text-primary {
+        font-size: 2rem;
+    }
+    
+    .menu-text-secondary {
+        font-size: 8rem;
+    }
+
+    .menu_effect {
+        display: none;
+
+    }
+
+    #responsive-sections {
+        display: block;
+      }
+    
+      .animation, .main, .menu, .Cakes, .Cupcakes, .Macarons, .Cookies {
+        display: none;
+      }
+
+      .content-right.product-image {
+        width: 30%;
+        height: 80%;
+      }
+   
+}
+
+@media (max-width: 480px) {
+    .Cakes, .Cupcakes, .Macarons, .Cookies {
+        padding: 15px 10px;
+    }
+
+    .Cakes .product-image h1 {
+        color: #6a1b9a;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .product-image {
+        width: 80%;
+    }
+
+    .Ingredients {
+        display: none;
+    }
+}
+
+
+
+.Cakes {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    /* background-color: #d8d64e; */
+    padding: 40px 20px;
+    height: 60vh;
+    
+}
+
+.content-left {
+    flex: 1;
+    position: relative;
+}
+
+.content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.product-image {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.product-image:nth-child(1) {
+    z-index: 3;
+}
+
+.product-image:nth-child(2),
+.product-image:nth-child(3) {
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product-image:nth-child(2) {
+    transform: translateX(-20%) scale(0.9);
+}
+
+.product-image:nth-child(3) {
+    transform: translateX(20%) scale(0.9);
+}
+
+.Cakes:hover .product-image:nth-child(1) {
+    transform: translateZ(20px);
+}
+
+.Cakes:hover .product-image:nth-child(2) {
+    opacity: 1;
+    transform: translateX(-40%) translateZ(10px) scale(0.9);
+}
+
+.Cakes:hover .product-image:nth-child(3) {
+    opacity: 1;
+    transform: translateX(40%) translateZ(10px) scale(0.9);
+}
+
+
+.Cakes:hover .Ingredients {
+    opacity: 1.4;
+    transition: transform 0.5s ease;
+}
+
+.Cakes:hover .Cake_Ingredients-1 {
+    
+    transform: translateX(-20%) scale(1.1);
+
+    
+}
+.Cakes:hover .Cake_Ingredients-2 {
+    
+    transform: translate(10%,-10%) scale(1.1) rotate(-20deg) ; 
+    
+    
+}
+.Cakes:hover .Cake_Ingredients-3 {
+    
+    transform: translateY(20%) scale(1.1) rotate(20deg);
+   
+}
+.Cakes:hover .Cake_Ingredients-4 {
+    
+    transform: translateY(-10%);
+}
+.Cakes:hover .Cake_Ingredients-5 {
+
+    transform: translateX(-10%) scale(1.1);
+   
+}
+.Cakes:hover .Cake_Ingredients-6 {
+
+    transform: translateX(10%) scale(1.1);
+    
+}
+.Cakes:hover .Cake_Ingredients-7 {
+
+    transform: translateX(10%)
+    
+}
+.Cakes:hover .Cake_Ingredients-8 {
+    transform: rotate(0deg);
+    
+}
+.Cakes:hover .Cake_Ingredients-9 {
+
+    transform: translateX(10%) rotate(220deg);
+    
+}
+
+
+.content-left h1 {
+    margin-left: 30%;
+    font-size: 6rem;
+    margin-bottom: 20px;
+    color: brown;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.Cakes:hover .content-left h1 {
+
+    transform: translateX(-5%);
+}
+
+.cta-button {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(227, 79, 128);
+    color: whitesmoke;
+    text-decoration: none;
+    margin-left: 40%;
+    padding: 10px 40px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+
+
+.cta-button::after {
+    content: "→";
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    padding-right: 45px; /* Increase padding on right side */
+}
+.cta-button:hover::after {
+    transform: translateX(0px); /* Move the arrow to the right */
+}
+
+.Ingredients {
+    position: absolute;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+  
+}
+
+.Cake_Ingredients-1 { 
+    top: 10%; left: 3%;
+    transform: rotate(10deg);
+    width: 100px;
+    height: 100px;
+}
+.Cake_Ingredients-2 { 
+    top: 0%; left: 65%;
+    width: 100px;
+    height: 100px;
+ }
+.Cake_Ingredients-3 { 
+    transform: rotate(40deg);
+    top: 98%; left: 43%;
+    width: 100px;
+    height: 100px; }
+
+.Cake_Ingredients-4 { 
+    top: -10%; left: 40%;
+    width: 120px;
+    height: 100px; }
+
+.Cake_Ingredients-5 { 
+    transform: rotate(-200deg);
+    top: 60%; left: 15%;
+    width: 100px;
+    height: 100px;}
+
+.Cake_Ingredients-6 {
+    top: 95%; right: 5%;
+    width: 130px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.Cake_Ingredients-7 {
+    top: 50%; right: 5%;
+    width: 100px;
+    height: 60px;
+
+}
+.Cake_Ingredients-8 {
+    top: 90%;
+    left: 20%;
+    transform: rotate(40deg);
+    width: 120px;
+    height: 90px;
+
+}
+.Cake_Ingredients-9 {
+    top: -10%; left: 15%;
+    width: 100px;
+    height: 90px;
+    transform: rotate(200deg);
+}
+.Cupcakes {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    /* background-color: #9b7c56; */
+    margin: 0 auto;
+    padding: 40px 20px;
+    height: 60vh;
+    
+}
+
+.Cupcakes .content-left {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.Cupcakes .content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.product-image {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.product-image:nth-child(1) {
+    z-index: 3;
+}
+
+.product-image:nth-child(2),
+.product-image:nth-child(3) {
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product-image:nth-child(2) {
+    transform: translateX(-20%) scale(0.9);
+}
+
+.product-image:nth-child(3) {
+    transform: translateX(20%) scale(0.9);
+}
+
+.Cupcakes:hover .product-image:nth-child(1) {
+    transform: translateZ(20px);
+}
+
+.Cupcakes:hover .product-image:nth-child(2) {
+    opacity: 1;
+    transform: translateX(-40%) translateZ(10px) scale(0.9);
+}
+
+.Cupcakes:hover .product-image:nth-child(3) {
+    opacity: 1;
+    transform: translateX(40%) translateZ(10px) scale(0.9);
+}
+
+
+.Cupcakes:hover .Ingredients {
+    opacity: 1.4;
+    transition: transform 0.5s ease;
+}
+
+.Cupcakes:hover .Cupcakes_Ingredients-1 {
+    
+    transform: translateX(-20%) scale(1.1);
+
+    
+}
+.Cupcakes:hover .Cupcakes_Ingredients-2 {
+    
+    transform: translate(10%,-10%) scale(1.1) rotate(-20deg) ; 
+    
+    
+}
+.Cupcakes:hover .Cupcakes_Ingredients-3 {
+    
+    transform: translateY(20%) scale(1.1) rotate(20deg);
+   
+}
+.Cupcakes:hover .Cupcakes_Ingredients-4 {
+    
+    transform: translateY(-10%) rotate(20deg);
+}
+.Cupcakes:hover .Cupcakes_Ingredients-5 {
+
+    transform: translateX(-10%) scale(1.1);
+   
+}
+.Cupcakes:hover .Cupcakes_Ingredients-6 {
+
+    transform: translateX(10%) scale(1.1) rotate(-6deg) ;
+    
+}
+.Cupcakes:hover .Cupcakes_Ingredients-7 {
+
+    transform: translateX(10%) scale(1);
+
+}
+.Cupcakes:hover .Cupcakes_Ingredients-8 {
+
+    transform:scale(1);
+    transition: transform 0.7s ease;
+
+    
+    
+}
+
+
+
+.Cupcakes .content-left h1 {
+    margin-left: 10%;
+    font-size: 6rem;
+    margin-bottom: 20px;
+    color: brown;
+    display: block;
+    z-index: 1;
+}
+.Cupcakes:hover .content-left h1 {
+    z-index: 1;
+    transform: translateX(-5%);
+}
+
+
+
+.Cupcakes_Ingredients-1 { 
+    top: 0%; left: 15%;
+    transform: rotate(10deg);
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.Cupcakes_Ingredients-2 { 
+    top: 0%; left: 65%;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+ }
+.Cupcakes_Ingredients-3 { 
+    transform: rotate(40deg);
+    top: 93%; left: 40%;
+    width: 100px;
+    height: 100px;
+    z-index: 1; }
+
+.Cupcakes_Ingredients-4 { 
+    top: 0%; left: 40%;
+    width: 120px;
+    height: 100px; 
+    z-index: 1;
+}
+
+.Cupcakes_Ingredients-5 { 
+    top: 70%; left: 15%;
+    width: 70px;
+    height: 60px;
+    z-index: 1;
+}
+
+
+.Cupcakes_Ingredients-6 {
+    top: 90%; left: 68%;
+    width: 200px;
+    height: 150px;
+    z-index: 1;
+    
+}
+
+.Cupcakes_Ingredients-7 {
+    top: 50%; right: 10%;
+    width: 70px;
+    height: 60px;
+    z-index: 1;
+
+}
+.Cupcakes_Ingredients-8 {
+    top: -40%; right: 10%;
+    z-index: -1;
+    transform: scale(0);
+    width: 500px;
+    height: 500px;
+
+}
+
+.Macarons {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    height: 60vh;
+    /* background-color: #6c63ff; */
+    
+}
+
+.Macarons .content-left {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.Macarons .content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.product-image {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.product-image:nth-child(1) {
+    z-index: 3;
+}
+
+.product-image:nth-child(2),
+.product-image:nth-child(3) {
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product-image:nth-child(2) {
+    transform: translateX(-20%) scale(0.9);
+}
+
+.product-image:nth-child(3) {
+    transform: translateX(20%) scale(0.9);
+}
+
+.Macarons:hover .product-image:nth-child(1) {
+    transform: translateZ(20px);
+}
+
+.Macarons:hover .product-image:nth-child(2) {
+    opacity: 1;
+    transform: translateX(-40%) translateZ(10px) scale(0.9);
+}
+
+.Macarons:hover .product-image:nth-child(3) {
+    opacity: 1;
+    transform: translateX(40%) translateZ(10px) scale(0.9);
+}
+
+
+.Macarons:hover .Ingredients {
+    opacity: 1.4;
+    transition: transform 0.5s ease;
+}
+
+.Macarons:hover .Macarons_Ingredients-1 {
+    
+    transform: translateX(-20%) scale(1.1) rotate(20deg);
+
+    
+}
+.Macarons:hover .Macarons_Ingredients-2 {
+    
+    transform: translate(10%,-10%) scale(1.1) rotate(-20deg) ; 
+    
+    
+}
+.Macarons:hover .Macarons_Ingredients-3 {
+    
+    transform: translateY(20%) scale(1) rotate(20deg);
+    transition: transform 0.5s ease;
+    
+   
+}
+.Macarons:hover .Macarons_Ingredients-4 {
+    
+    transform: translateY(-10%) rotate(10deg);
+}
+.Macarons:hover .Macarons_Ingredients-5 {
+
+    transform: translateX(-10%) scale(1.1) rotate(20deg);
+   
+}
+.Macarons:hover .Macarons_Ingredients-6 {
+
+    transform: translateX(10%) scale(1.1) rotate(30deg) ;
+    
+}
+.Macarons:hover .Macarons_Ingredients-7 {
+
+    transform: translateX(10%) scale(1);
+
+}
+.Macarons:hover .Macarons_Ingredients-8 {
+
+    transition: transform 0.7s ease;
+    transform: scale(1);
+
+    
+    
+}
+
+
+
+.Macarons .content-left h1 {
+    margin-left: 17%;
+    font-size: 6rem;
+    margin-bottom: 20px;
+    color: brown;
+    display: block;
+    z-index: 1;
+}
+.Macarons:hover .content-left h1 {
+    z-index: 1;
+    transform: translateX(-5%);
+}
+
+
+
+
+.Macarons_Ingredients-1 { 
+    top: 0%; left: 15%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.Macarons_Ingredients-2 { 
+    top: 0%; left: 65%;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+ }
+.Macarons_Ingredients-3 { 
+    transform: scale(0);
+    top: 73%; left: 20%;
+    width: 100px;
+    height: 100px;
+    z-index: 1; }
+
+.Macarons_Ingredients-4 { 
+    top: 0%; left: 40%;
+    width: 50px;
+    height: 50px; 
+    z-index: 1;
+}
+
+.Macarons_Ingredients-5 { 
+    top: 82%; left: 23%;
+    width: 100px;
+    height: 90px;
+    z-index: 1;
+}
+
+
+.Macarons_Ingredients-6 {
+    top: 90%; left: 68%;
+    width: 80px;
+    height: 100px;
+    z-index: 1;
+    
+}
+
+.Macarons_Ingredients-7 {
+    top: 0%; right: 15%;
+    z-index: -1;
+    transform: scale(0);
+    width: 130px;
+    height: 100px;
+
+}
+.Cookies {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    height: 60vh;
+    /* background-color: #0c7797; */
+    
+}
+
+.Cookies .content-left {
+    flex: 1;
+    position: relative;
+    margin-top: -10%;
+    z-index: 1;
+}
+
+.Cookies .content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+}
+
+
+
+.Cookies .product-image {
+    position: absolute;
+    left: -8%;
+    width: 44%;
+    height: 60%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.Cookies1 {
+
+    position: absolute;
+    left: -21%;
+    width: 60%;
+    height: 75%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    backface-visibility: hidden;
+
+}
+
+
+.Cookies1:nth-child(1) {
+    z-index: 3;
+}
+
+.product-image:nth-child(2),
+.product-image:nth-child(3) {
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product-image:nth-child(2) {
+    transform: translateX(-10%) scale(1);
+}
+
+.product-image:nth-child(3) {
+    transform: translateX(20%) scale(0.9);
+}
+
+.Cookies:hover .product-image:nth-child(1) {
+    transform: translateZ(20px);
+}
+
+.Cookies:hover .product-image:nth-child(2) {
+    opacity: 1;
+    transform: translateX(-20%) translateZ(10px) scale(1.1);
+}
+
+.Cookies:hover .product-image:nth-child(3) {
+    opacity: 1;
+    transform: translateX(40%) translateZ(10px) scale(0.9);
+}
+
+
+.Cookies:hover .Ingredients {
+    opacity: 1.4;
+    transition: transform 0.5s ease;
+}
+
+
+.Cookies:hover .Cookies_Ingredients-1 {
+
+    transition: transform 0.7s ease;
+    transform: scale(1);
+ 
+}
+.Cookies:hover .Cookies_Ingredients-2 {
+
+    transition: transform 0.7s ease;
+    transform: translateY(-20%) scale(1.1);
+ 
+}
+.Cookies:hover .Cookies_Ingredients-3 {
+
+    transition: transform 0.7s ease;
+    transform: translateY(30%) scale(1.1);
+ 
+}
+.Cookies:hover .Cookies_Ingredients-4 {
+
+    transition: transform 0.7s ease;
+    transform: scale(1);
+ 
+}
+.Cookies:hover .Cookies_Ingredients-5  {
+    transition: transform 0.3s ease;
+    transform: translateX(-45%) rotate(10deg);
+ 
+}
+.Cookies:hover .Cookies_Ingredients-6  {
+    transition: transform 0.3s ease;
+    transform: translateX(-45%) rotate(10deg);
+ 
+}
+
+
+
+.Cookies .content-left h1 {
+    margin-left: 17%;
+    font-size: 6rem;
+    margin-bottom: 20px;
+    color: brown;
+    display: block;
+    z-index: 1;
+}
+.Cookies:hover .content-left h1 {
+    z-index: 1;
+    transform: translateX(-5%);
+}
+
+
+.Cookies_Ingredients-1 {
+    top: -40%; right: 10%;
+    z-index: -1;
+    transform: scale(0);
+    width: 500px;
+    height: 500px;
+}
+
+.Cookies_Ingredients-2 {
+    transform: translateY(30%) scale(0);
+    top: 10%; right: 25%;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+}
+.Cookies_Ingredients-3 {
+    transform: translateY(-30%) scale(0);
+    bottom: -30%; left: 20%;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+}
+
+.Cookies_Ingredients-4 {
+    top: -40%; right: 10%;
+    z-index: -1;
+    transform: scale(0);
+    width: 500px;
+    height: 500px;
+}
+.Cookies_Ingredients-5 {
+    top: 38%; left: 28.3%;
+    z-index: 1;
+    width: 50px;
+    height: 80px;
+}
+.Cookies_Ingredients-6 {
+    top: 38%; left: 36.3%;
+    z-index: 1;
+    width: 50px;
+    height: 80px;
+}
+
+.stores-section {
+    max-width: 100%;
+    margin: 60px auto;
+    background-color: #6a1b9a;
+    padding-top: 0px;
+    padding-bottom: 70px;
+}
+
+.stores-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.stores-container {
+    display: flex;
+    margin-left: 18%;
+    width: 60%;
+    height: 100%;
+    justify-content: center;
+    gap: 40px;
+}
+
+.store-card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.store-image-container {
+    position: relative;
+    margin-top: 0px;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+
+.store-image-container .hover-image{
+   
+    margin-top: -80px;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+
+
+.store-image-container .hover-image-2{
+   display: flex;
+   justify-content: center;
+    text-align: center;
+    margin-top: 0px;
+    height: 100%;
+    color: rgb(88, 0, 88);
+    background-color: pink;
+    overflow: hidden;
+}
+
+.store-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.initial-image {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.hover-image {
+    transform: translateX(100%);
+    opacity: 0;
+}
+.hover-image-2 {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+
+.store-image-container:hover .initial-image {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.store-image-container:hover .hover-image-2 {
+    transform: translateX(0);
+    opacity: 1;
+}
+.store-image-container:hover .hover-image {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.store-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.store-info h3 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.store-info p {
+    color: rgb(60, 57, 57);
+    margin-bottom: 20px;
+}
+
+.directions-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: palevioletred;
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.directions-button:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .stores-container {
+        flex-direction: column;
+
+    }
+
+    
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .Cakes {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .content-left, .content-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 span {
+        font-size: 4rem;
+        margin-left: 0;
+    }
+
+    .cta-button {
+        margin-left: 0;
+    }
+
+    .product-images {
+        width: 80%;
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .fruit {
+        display: none;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu_effect {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-container, .menu-items {
+        width: 100%;
+    }
+
+    .image-container {
+        height: 300px; /* Adjust as needed for mobile */
+    }
+
+    .menu-items {
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+
+    .menu-items li {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 769px) {
+    #responsive-sections {
+      display: none;
+    }
+  }
+
+
+
+@keyframes anime {
+0% {
+transform: translateX(0%);
+}
+
+100% {
+transform: translateX(-100%);
+}
+}

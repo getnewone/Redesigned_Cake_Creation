@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | CCBK</title>
+    <link rel="stylesheet" href="T_C.css">
+    <link rel="stylesheet" href="Nav-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="terms-header">
+          <h1>Terms & Conditions</h1>
+          <p>Last updated: September 25, 2018</p>
+        </div>
+      
+        <div class="quick-summary">
+          <h2>Quick Summary</h2>
+          <p>• 50% deposit required for all orders</p>
+          <p>• Full payment required 14 days before delivery for wedding cakes</p>
+          <p>• Cancellations incur a 50% fee</p>
+          <p>• Pick up recommended 4 hours before event</p>
+        </div>
+      
+        <div class="accordion-section">
+          <div class="accordion-header">
+            About the Website & Acceptance
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Welcome to cakecreationsbykate.com.au, operated by Cake Creations by Kate Pty Ltd. By accessing our site and services, you agree to these terms. We may update these terms anytime; please review them periodically.</p>
+            <div class="key-point">
+              <p>Using or purchasing through this Website signifies your agreement to these terms. If you do not accept them, please discontinue use immediately.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="accordion-section">
+          <div class="accordion-header">
+            Purchasing & Payment Terms
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>All orders made online or in-store require a 50% deposit for confirmation.</p>
+            <div class="key-point">
+              <p>Full payment is required 14 days before delivery for wedding cakes.</p>
+            </div>
+            <p>We use third-party payment providers and recommend reviewing their terms.</p>
+          </div>
+        </div>
+      
+        <div class="accordion-section">
+          <div class="accordion-header">
+            Changes, Cancellations & Returns
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <ul>
+              <li>Order adjustments possible with potential fees</li>
+              <li>Cancellations incur a 50% fee to cover costs</li>
+              <li>Refunds allowed within 7 days if unopened and saleable</li>
+              <li>Perishable items are non-refundable</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="accordion-section">
+          <div class="accordion-header">
+            Pickup & Delivery
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <div class="key-point">
+              <p>We recommend pickup 4 hours before your event. Once you receive the items, you are responsible for any damage.</p>
+            </div>
+            <p>For delivery, Cake Creations may use third-party providers, and claims for damages must be directed to them.</p>
+          </div>
+        </div>
+      
+        <div class="accordion-section">
+          <div class="accordion-header">
+            Warranty & Claims
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Product defects may be claimed within the warranty period with proof of purchase.</p>
+            <p>Approved claims will lead to repairs or replacements at our discretion.</p>
+            <p>Shipping costs for claims are the customer's responsibility.</p>
+          </div>
+        </div>
+      
+        <div class="accordion-section">
+          <div class="accordion-header">
+            Copyright & Privacy
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>All content is protected by copyright under Australian and international laws.</p>
+            <p>Your information is handled in accordance with our Privacy Policy.</p>
+          </div>
+        </div>
+      
+        <div class="accordion-section">
+          <div class="accordion-header">
+            Liability & Dispute Resolution
+            <span>+</span>
+          </div>
+          <div class="accordion-content">
+            <p>Liability is limited to the amount paid or cost of resupplying services.</p>
+            <p>Disputes will be resolved through negotiation or mediation before legal proceedings.</p>
+            <div class="key-point">
+              <p>All disputes are subject to the courts of Victoria, Australia.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="user-rights">
+          <h2>Contact Information</h2>
+          <p>For any questions or concerns regarding these terms, please contact us at:</p>
+          <ul>
+            <li>Email: <a href="mailto:sales@ccbk.com.au">sales@ccbk.com.au</a></li>
+            <li>Address: Shop 111, Cnr Main and Murnong Streets, Point Cook, Victoria 3030, Australia</li>
+          </ul>
+        </div>
+      </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const accordionHeaders = document.querySelectorAll('.accordion-header');
+          
+          accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+              const content = this.nextElementSibling;
+              const isActive = content.classList.contains('active');
+              
+              // Close all sections
+              document.querySelectorAll('.accordion-content').forEach(item => {
+                item.classList.remove('active');
+              });
+              
+              // Open clicked section if it wasn't active
+              if (!isActive) {
+                content.classList.add('active');
+              }
+            });
+          });
+        });
+        </script>
+    <script src="Intro.js"></script>
+    <script src="Nav-footer.js"></script>
+    <script src="cart.js"></script>
+    <script src="cart-counter.js"></script>
+    <script src="Cake_products.js"></script>
+</body>
+</html>

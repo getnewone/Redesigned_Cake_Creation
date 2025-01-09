@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Sweets & Treats - Cake Creations by Kate</title>
+    <link rel="stylesheet" href="Nav-footer.css">
+    <link rel="stylesheet" href="corporate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   
+
+    <main class="corp-page">
+        <section class="corp-hero">
+            <div class="corp-hero-content">
+                <h1 class="corp-title">CORPORATE SWEETS & TREATS</h1>
+                <p class="corp-subtitle">Take your brand to the next level</p>
+                <div class="corp-intro">
+                    <p>Throwing a PR event? Celebrating a sale? Annual Christmas party? We have you covered!</p>
+                    <p>Make your workplace celebration more personable, with customisable cookies, cupcakes and specialty cakes!</p>
+                    <p>Cake Creations by Kate is proud to have successfully partnered with brands such as ANZ, Crown Casino, Telstra, Myer, Optus, Target and more!</p>
+                </div>
+            </div>
+            <div class="corp-hero-image">
+                <img src="Images/Other_content/http---prod.static9.net.au-_-media-2018-09-18-14-29-1809_CUPCAKE3.jpg" alt="Corporate Treats">
+            </div>
+        </section>
+
+        <section class="corp-products">
+            <div class="corp-product-card">
+                <div class="corp-product-icon">
+                    <i class="fas fa-cookie"></i>
+                </div>
+                <h2>COOKIES</h2>
+            </div>
+            <div class="corp-product-card">
+                <div class="corp-product-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h2>CUPCAKES</h2>
+            </div>
+            <div class="corp-product-card">
+                <div class="corp-product-icon">
+                    <i class="fas fa-birthday-cake"></i>
+                </div>
+                <h2>CAKES</h2>
+            </div>
+        </section>
+
+        <section class="corp-product-details">
+            <div class="corp-product-content">
+                <img src="Images/Cookies/Screenshot 2024-11-07 at 11.37.36 am.png" alt="Corporate Cookies">
+                <div class="corp-product-info">
+                    <h2>COOKIES</h2>
+                    <p>Add a bit of oomph into your next business meeting with these customisable cookies!</p>
+                    <ul>
+                        <li>Customise our cookies with your branding either stamped or printed on fondant</li>
+                        <li>The base cookie is vanilla flavoured and is available in Mini (5.5cm) or Standard (8.5cm) sizes</li>
+                        <li>1-3 weeks notice required depending on quantities, for both style of cookies</li>
+                        <li>All cookies are bagged separately, but can be purchased in packs for gifts if needed</li>
+                    </ul>
+                    <a href="#" class="corp-btn">SHOP NOW</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-product-details">
+            <div class="corp-product-content reverse">
+                <div class="corp-product-info">
+                    <h2>CUPCAKES</h2>
+                    <p>Elevate your brand in the yummiest way possible!</p>
+                    <ul>
+                        <li>Customise our cupcakes with edible prints of your choice on fondant discs</li>
+                        <li>Choose from vanilla, chocolate mud or half chocolate and half vanilla base</li>
+                        <li>Available in Mini or Large sizes</li>
+                        <li>Available in boxes of 6, 12, 36, 48 and above</li>
+                        <li>We require 4- 14 days notice* for these cupcakes</li>
+                        <li>Minimum order is 12 cupcakes</li>
+                    </ul>
+                    <p>Prices start from $2.50 each for Mini and $5.50 each for Large cupcakes. Bulk pricing available.</p>
+                    <p><small>*Subject to quantity</small></p>
+                    <a href="Cupcakes.html" class="corp-btn">SHOP NOW</a>
+                </div>
+                <img src="Images/Cupcakes/Screenshot 2024-11-07 at 11.38.05 am.png" alt="Corporate Cupcakes">
+            </div>
+        </section>
+
+        <section class="corp-product-details">
+            <div class="corp-product-content">
+                <img src="https://cdn.shopify.com/s/files/1/2254/9307/t/18/assets/untitled-design-1634771108803.jpeg?v=1634771111" alt="Corporate Cakes">
+                <div class="corp-product-info">
+                    <h2>CAKES</h2>
+                    <p>The party in the staff room is about to get a whole lot better. Who doesn't love cake?</p>
+                    <ul>
+                        <li>Customise your very own cake with branding, images and designs - the options are endless!</li>
+                        <li>The base is available in Chocolate Mud, Vanilla, Marble, Caramel Mud or White Chocolate Raspberry</li>
+                        <li>For custom cakes, we require 14 days notice</li>
+                        <li>Submit an enquiry form with exactly what you are after and let us bring your imagination into reality</li>
+                    </ul>
+                    <a href="Cakes.html" class="corp-btn">SHOP NOW</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-cta">
+            <h2>Ready to Sweeten Your Corporate Event?</h2>
+            <p>Contact us today to discuss your custom corporate order</p>
+            <a href="#" class="corp-btn">GET IN TOUCH</a>
+        </section>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="Nav-footer.js"></script>
+    <script src="cart-counter.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate hero section
+    gsap.from('.corp-hero-content', { 
+        opacity: 0, 
+        x: -50, 
+        duration: 1, 
+        ease: 'power3.out' 
+    });
+    gsap.from('.corp-hero-image', { 
+        opacity: 0, 
+        x: 50, 
+        duration: 1, 
+        ease: 'power3.out' 
+    });
+
+    // Animate product cards
+    gsap.from('.corp-product-card', {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: '.corp-products',
+            start: 'top 80%'
+        }
+    });
+
+    // Animate product details sections
+    gsap.utils.toArray('.corp-product-details').forEach(section => {
+        gsap.from(section, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 80%'
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>

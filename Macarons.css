@@ -1,0 +1,238 @@
+body, html {
+    background-color: pink;
+     margin: 0;
+     padding: 0;
+     width: 100vw;
+     
+    
+ }
+ 
+
+ .heading {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    color: whitesmoke;
+    letter-spacing: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow:
+    1px 1px 0 #444,
+    2px 2px 0 #444,
+    3px 3px 0 #444,
+    4px 4px 0 #444,
+    5px 5px 0 #444;
+ }
+
+ .simple-Macarons-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.main-content {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.main-image {
+    flex: 1;
+    max-width: 500px;
+    height: 500px;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.product-image {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    
+}
+
+.product-image:nth-child(1) {
+    z-index: 3;
+}
+
+.product-image:nth-child(2),
+.product-image:nth-child(3) {
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product-image:nth-child(2) {
+    transform: translateX(-20%) scale(0.9);
+}
+
+.product-image:nth-child(3) {
+    transform: translateX(20%) scale(0.9);
+}
+
+.main-image:hover .product-image:nth-child(1) {
+    transform: translateZ(20px);
+}
+
+.main-image:hover .product-image:nth-child(2) {
+    opacity: 1;
+    transform: translateX(-30%) translateZ(10px) translateY(-10px) scale(0.9);
+}
+
+.main-image:hover .product-image:nth-child(3) {
+    opacity: 1;
+    transform: translateX(30%) translateZ(10px) translateY(-5px) scale(0.9);
+}
+
+.main-text {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* Prevent text overflow */
+}
+
+.description {
+    color: #67107a;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: monospace;
+    font-weight: 400;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.description span {
+    display: inline-block; 
+    transition: transform 0.3s ease; 
+    margin-right: 5px; 
+}
+
+/* Add hover effect on each word */
+.description span:hover {
+    transform: translateX(10px); 
+    color: whitesmoke;
+}
+
+
+
+
+
+
+.Macarons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 2px solid purple;
+}
+
+.Macarons-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.Macarons-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.Macarons-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.Macarons-info {
+    position: absolute;
+    bottom: 0;
+    left: -12px;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(237, 127, 164);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.Macarons-info h3 {
+    margin:0px;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(99, 2, 99);
+}
+
+.Macarons-info p {
+    margin: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-style: bold;
+    color: rgb(253, 253, 253);
+}
+
+.Macarons-item:hover img {
+    transform: translateY(-60px);
+}
+
+.Macarons-item:hover .Macarons-info {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .Macarons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .main-image, .main-text {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Macarons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+
+    .heading {
+        margin-top: 40px;
+        font-size: 25px;
+    }
+
+    .main-text {
+        padding: 10px;
+    }
+}
+
+ 
+ 
